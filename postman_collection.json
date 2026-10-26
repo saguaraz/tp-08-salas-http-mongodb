@@ -1,0 +1,116 @@
+{
+	"info": {
+		"name": "TP08 - API Reservas Salas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Listar todas las reservas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/reservas",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3000",
+					"path": ["api", "reservas"]
+				}
+			}
+		},
+		{
+			"name": "2. Crear reserva (Válida)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"estudiante\": \"Ana Ejemplo\",\n  \"email\": \"ana@example.com\",\n  \"sala\": \"Sala Norte\",\n  \"fecha\": \"2026-10-21\",\n  \"turno\": \"Mañana\",\n  \"personas\": 2\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/reservas",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3000",
+					"path": ["api", "reservas"]
+				}
+			}
+		},
+		{
+			"name": "3. Filtrar por Sala Exacta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/reservas?sala=Sala%20Norte",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3000",
+					"path": ["api", "reservas"],
+					"query": [
+						{
+							"key": "sala",
+							"value": "Sala Norte"
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "4. Error - ID Mal Formado (400)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/reservas/1",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3000",
+					"path": ["api", "reservas", "1"]
+				}
+			}
+		},
+		{
+			"name": "5. Error - ID Válido Inexistente (404)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/reservas/000000000000000000000000",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3000",
+					"path": ["api", "reservas", "000000000000000000000000"]
+				}
+			}
+		},
+		{
+			"name": "6. Error - Crear sin email valido (400)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"estudiante\": \"Carlos Test\",\n  \"email\": \"carlostest.com\",\n  \"sala\": \"Sala Sur\",\n  \"fecha\": \"2026-10-22\",\n  \"turno\": \"Tarde\",\n  \"personas\": 3\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/reservas",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3000",
+					"path": ["api", "reservas"]
+				}
+			}
+		}
+	]
+}
