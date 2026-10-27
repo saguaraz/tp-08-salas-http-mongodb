@@ -17,7 +17,7 @@
 					"path": ["api", "reservas"]
 				}
 			}
-		},
+		},      
 		{
 			"name": "2. Crear reserva (Válida)",
 			"request": {

@@ -1,25 +1,28 @@
 # tp-08-salas-http-mongodb
-TP8
 TP 08: Endpoints Persistentes de Reservas de Salas
+
 Este proyecto implementa la migración de un sistema de reservas de salas hacia una capa de persistencia en MongoDB Atlas Free (M0) mediante la biblioteca Mongoose, exponiendo tanto una interfaz web (rutas HTML) como un contrato API JSON asíncrono.
 
 1. Origen del Proyecto y Versiones
-Repositorio de origen: Copia individual del TP 07 (tp-07-salas-mongodb).
-Nombre sugerido: tp-08-salas-http-mongodb.
-Node.js: v20+ / v22+ (ejecución nativa con flag --env-file).
-Framework Web: Express v5 (express).
-ORM / ODM: Mongoose (mongoose).
-Motor de Plantillas: EJS (ejs, express-ejs-layouts).
-2. Preparación de MongoDB Atlas, Entorno y DNS
-Base de Datos y Colección
-Base de Datos: reservas_salas_u8
-Colección: reservas
-Variables de Entorno (.env.example)
-Crear un archivo .env en la raíz del proyecto basándose en la siguiente plantilla:
+  Repositorio de origen: Copia individual del TP 07 (tp-07-salas-mongodb).
+  Nombre sugerido: tp-08-salas-http-mongodb.
+  Node.js: v20+ / v22+ (ejecución nativa con flag --env-file).
+  Framework Web: Express v5 (express).
+  ORM / ODM: Mongoose (mongoose).
+  Motor de Plantillas: EJS (ejs, express-ejs-layouts).
 
-PORT=3000
-NODE_ENV=development
-MONGODB_URI=mongodb+srv://USUARIO:CLAVE@HOST/reservas_salas_u8?retryWrites=true&w=majority
+2. Preparación de MongoDB Atlas, Entorno y DNS
+
+  Base de Datos y Colección
+  Base de Datos: reservas_salas_u8
+  Colección: reservas
+  Variables de Entorno (.env.example)
+  Crear un archivo .env en la raíz del proyecto basándose en la siguiente plantilla:
+
+    PORT=3000
+    NODE_ENV=development
+    MONGODB_URI=mongodb+srv://USUARIO:CLAVE@HOST/reservas_salas_u8?retryWrites=true&w=majority   
+ 
 Nota de Seguridad: El archivo .env está excluido del control de versiones (.gitignore). No subir credenciales reales a GitHub.
 
 Ajuste de DNS
