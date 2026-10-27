@@ -4,6 +4,7 @@
   "description": "TP8 TP 08: Endpoints Persistentes de Reservas de Salas Este proyecto implementa la migración de un sistema de reservas de salas hacia una capa de persistencia en MongoDB Atlas Free (M0) mediante la biblioteca Mongoose, exponiendo tanto una interfaz web (rutas HTML) como un contrato API JSON asíncrono.",
   "main": "index.js",
   "scripts": {
+    "start": "node --env-file=.env src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
